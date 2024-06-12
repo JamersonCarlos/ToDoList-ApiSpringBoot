@@ -1,8 +1,14 @@
+security: 
+    jwt: 
+        token: 
+            secret-key: 53cr37
+            expire-length: 7200000 
+
 spring: 
     datasource: 
         url: jdbc:mysql://localhost:3306/todolist
-        username: root 
-        password: carlos 
+        username: root
+        password: carlos
         driver-class-name: com.mysql.cj.jdbc.Driver
 
     jpa: 

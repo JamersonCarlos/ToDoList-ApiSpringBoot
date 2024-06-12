@@ -1,2 +1,14 @@
 C:\Users\jcven\Projetos SpringBoot\todo_list_api\src\main\java\api\todo_list_api\config\OpenApiConfig.java
+C:\Users\jcven\Projetos SpringBoot\todo_list_api\src\main\java\api\todo_list_api\config\SecurityConfig.java
+C:\Users\jcven\Projetos SpringBoot\todo_list_api\src\main\java\api\todo_list_api\Exceptions\CustomizedResponseEntityExceptionHandler.java
+C:\Users\jcven\Projetos SpringBoot\todo_list_api\src\main\java\api\todo_list_api\Exceptions\ExceptionModel.java
+C:\Users\jcven\Projetos SpringBoot\todo_list_api\src\main\java\api\todo_list_api\Exceptions\InvalidTokenAccessException.java
+C:\Users\jcven\Projetos SpringBoot\todo_list_api\src\main\java\api\todo_list_api\models\UserModel.java
+C:\Users\jcven\Projetos SpringBoot\todo_list_api\src\main\java\api\todo_list_api\repository\UserRepository.java
+C:\Users\jcven\Projetos SpringBoot\todo_list_api\src\main\java\api\todo_list_api\security\jwt\JwtConfigurer.java
+C:\Users\jcven\Projetos SpringBoot\todo_list_api\src\main\java\api\todo_list_api\security\jwt\JwtTokenFilter.java
+C:\Users\jcven\Projetos SpringBoot\todo_list_api\src\main\java\api\todo_list_api\security\jwt\JwtTokenProvider.java
+C:\Users\jcven\Projetos SpringBoot\todo_list_api\src\main\java\api\todo_list_api\services\UserService.java
 C:\Users\jcven\Projetos SpringBoot\todo_list_api\src\main\java\api\todo_list_api\TodoListApiApplication.java
+C:\Users\jcven\Projetos SpringBoot\todo_list_api\src\main\java\api\todo_list_api\userDetails\CustomUserDetails.java
+C:\Users\jcven\Projetos SpringBoot\todo_list_api\src\main\java\api\todo_list_api\VO\TokenVO.java
