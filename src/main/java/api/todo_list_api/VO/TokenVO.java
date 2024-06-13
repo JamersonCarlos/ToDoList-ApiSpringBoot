@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class TokenVO implements Serializable {
     
-    private String email; 
+    private String username; 
     private Boolean authenticated; 
     private Date created; 
     private Date expiration;    
@@ -13,11 +13,15 @@ public class TokenVO implements Serializable {
     private String refreshToken;
 
     
-
     
-    public TokenVO(String email, Boolean authenticated, Date created, Date expiration, String accessToken,
+    
+    public TokenVO() {
+    }
+
+
+    public TokenVO(String username, Boolean authenticated, Date created, Date expiration, String accessToken,
             String refreshToken) {
-        this.email = email;
+        this.username = username;
         this.authenticated = authenticated;
         this.created = created;
         this.expiration = expiration;
@@ -26,13 +30,13 @@ public class TokenVO implements Serializable {
     }
 
 
-    public String getEmail() {
-        return email;
+    public String getusername() {
+        return username;
     }
 
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setusername(String username) {
+        this.username = username;
     }
 
 
@@ -90,7 +94,7 @@ public class TokenVO implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((email == null) ? 0 : email.hashCode());
+        result = prime * result + ((username == null) ? 0 : username.hashCode());
         result = prime * result + ((authenticated == null) ? 0 : authenticated.hashCode());
         result = prime * result + ((created == null) ? 0 : created.hashCode());
         result = prime * result + ((expiration == null) ? 0 : expiration.hashCode());
@@ -109,10 +113,10 @@ public class TokenVO implements Serializable {
         if (getClass() != obj.getClass())
             return false;
         TokenVO other = (TokenVO) obj;
-        if (email == null) {
-            if (other.email != null)
+        if (username == null) {
+            if (other.username != null)
                 return false;
-        } else if (!email.equals(other.email))
+        } else if (!username.equals(other.username))
             return false;
         if (authenticated == null) {
             if (other.authenticated != null)
