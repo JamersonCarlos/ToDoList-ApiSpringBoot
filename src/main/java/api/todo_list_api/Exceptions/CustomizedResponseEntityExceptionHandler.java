@@ -21,6 +21,20 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
         return new ResponseEntity<>(exceptionModel, HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(EmailAlreadyExistsException.class)
+    public final ResponseEntity<ExceptionModel> handleEmailAlreadyExistsException(Exception ex, WebRequest web) { 
+        ExceptionModel exceptionModel = new ExceptionModel(new Date(), ex.getMessage(), web.getDescription(false));
+        return new ResponseEntity<>(exceptionModel, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(PasswordLengthInvalidException.class)
+    public final ResponseEntity<ExceptionModel> handlePasswordInvalidLength(Exception ex, WebRequest web) { 
+        ExceptionModel exceptionModel = new ExceptionModel(new Date(), ex.getMessage(), web.getDescription(false));
+        return new ResponseEntity<>(exceptionModel, HttpStatus.BAD_REQUEST);
+    }
+
+
+
 
     @ExceptionHandler(InvalidTokenAccessException.class)
     public final ResponseEntity<ExceptionModel> handleInvalidTokenException(Exception ex, WebRequest web) { 
