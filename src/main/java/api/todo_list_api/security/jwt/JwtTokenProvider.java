@@ -41,30 +41,30 @@ public class JwtTokenProvider {
         algorithm = Algorithm.HMAC256(secretKey.getBytes());
     }
 
-    public TokenVO createAccessToken(String email) {
+    public TokenVO createAccessToken(String username) {
         Date now = new Date();
         Date validity = new Date(now.getTime() + validityInMilliseconds);
-        var accessToken = getAccessToken(email, now, validity);
-        var refreshToken = getRefreshToken(email, now);
-        return new TokenVO(email, true, now, validity, accessToken, refreshToken);
+        var accessToken = getAccessToken(username, now, validity);
+        var refreshToken = getRefreshToken(username, now);
+        return new TokenVO(username, true, now, validity, accessToken, refreshToken);
     }
 
-    private String getRefreshToken(String email, Date now) {
+    private String getRefreshToken(String username, Date now) {
         Date validityRefreshToken = new Date(now.getTime() + (validityInMilliseconds * 4));
         return JWT.create()
                 .withIssuedAt(now)
                 .withExpiresAt(validityRefreshToken)
-                .withSubject(email)
+                .withSubject(username)
                 .sign(algorithm)
                 .strip();
     }
 
-    private String getAccessToken(String email, Date now, Date validity) {
+    private String getAccessToken(String username, Date now, Date validity) {
         String issueUrl = ServletUriComponentsBuilder.fromCurrentContextPath().build().toUriString();
         return JWT.create()
                 .withIssuedAt(now)
                 .withExpiresAt(validity)
-                .withSubject(email)
+                .withSubject(username)
                 .withIssuer(issueUrl)
                 .sign(algorithm)
                 .strip();
