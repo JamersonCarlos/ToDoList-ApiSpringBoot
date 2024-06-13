@@ -9,9 +9,9 @@ import org.springframework.data.repository.query.Param;
 import api.todo_list_api.models.UserModel;
 
 @Repository
-public interface UserRepository extends JpaRepository<UserModel, Long>{
-    
-    @Query("SELECT u FROM UserModel u WHERE u.email =:email")
-    UserModel findByUsername(@Param("email") String email); 
+public interface UserRepository extends JpaRepository<UserModel, Long> {
+
+    @Query("SELECT u FROM UserModel u WHERE u.username =:username")
+    UserModel findByUsername(@Param("username") String username);
 
 }
